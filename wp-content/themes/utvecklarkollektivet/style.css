@@ -1,0 +1,131 @@
+/*
+Theme Name: Utvecklarkollektivet
+Theme URI: http://wordpress.org/extend/themes/utvecklarkollektivet
+Author: Utvecklarkollektivet
+Author URI: http://utvecklarkollektivet.se/
+Description: Utvecklarkollektivet.
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,700,400italic);
+
+/* ! Body
+======================== */
+
+body {
+	background: #eee;
+	color: #333;
+	font: 16px/1.125em "Noto Serif", serif;
+}
+
+/* ! Container
+======================== */
+.container {
+	margin-top: 20px;
+}
+
+/* ! Typography
+======================== */
+
+h1,h2,h3,h4 {
+	font-family: "Noto sans", sans-serif;
+	font-weight: bold;
+}
+
+h1 {font-size:2em}
+h2 {font-size:1.5em}
+h3 {font-size:1.25em}
+h4 {font-size:1em}
+
+p {
+	font-size: 0.875em;
+}
+
+/* ! Header
+======================== */
+
+header {
+	border-bottom: 2px solid #ddd;
+}
+
+.uk-menu {
+	list-style: none;
+}
+
+.uk-menu li {
+	line-height: 200px;
+}
+
+.uk-meta {
+	list-style: none;
+}
+
+
+/* ! FRONTPAGE
+======================== */
+
+.uk-blogpost {
+	border-bottom: 2px solid #ddd;
+}
+
+/* ! Single View
+======================== */
+.uk-postmeta {
+	border-top: 2px solid #ddd;
+	font-size: 0.8em;
+}
+
+/* ! Projekt arkiv
+======================== */
+
+.uk-projekt {
+	border-bottom: 2px solid #ddd;
+}
+
+.uk-projekt-medlemmar {
+	margin: 0;
+	list-style: none;
+}
+
+.uk-projekt-medlemmar-medlem {
+	margin: 10px;
+}
+
+
+/* ! Kommentar
+======================== */
+.comment-list {
+	margin-left: 0;
+}
+
+.comment-list li {
+	list-style: none;
+	margin-left: 0;
+}
+
+.uk-comment {
+	margin: 20px 0;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #ddd;
+}
+
+.uk-comment-body {
+	margin: 10px 0;
+}
+
+.uk-comment-meta,
+.uk-comment-reply {
+	font-size: 0.8em;
+}
+
+/* ! HELPERS
+======================== */
+
+.align-left {
+	float: left;
+}
