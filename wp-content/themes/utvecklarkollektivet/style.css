@@ -59,6 +59,24 @@ header {
 
 .uk-menu li {
 	line-height: 200px;
+	float: left;
+	margin: 0 10px;
+}
+
+.uk-menu li:first-child { 
+	margin-left: 0;
+}
+
+.uk-menu li a {
+	padding: 10px;
+	color: #333;
+	background: #fff;
+	border-radius: 2px;
+}
+
+.uk-menu li a:hover {
+	text-decoration: none;
+	background: #f9f9f9;
 }
 
 .uk-meta {
@@ -71,6 +89,17 @@ header {
 
 .uk-blogpost {
 	border-bottom: 2px solid #ddd;
+}
+
+.uk-blogpost-thumbnail img {
+	float: right;
+	margin: 20px 0;
+	border: 2px solid #333;
+}
+
+.uk-blogpost-meta {
+	margin-top: -18px;
+	font-size: 0.7em;
 }
 
 /* ! Single View

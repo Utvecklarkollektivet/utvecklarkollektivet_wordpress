@@ -8,6 +8,10 @@ function register_main_nav() {
 }
 add_action( 'init', 'register_main_nav' );
 
+// Lägger till support för thumbnail till bloggpost.
+add_theme_support('post-thumbnails', array('post'));
+
+// Template för hur en kommentar ser ut.
 function uk_comment_template ($comment, $args, $depth) {
 		$GLOBALS['comment'] = $comment;
 		extract($args, EXTR_SKIP);

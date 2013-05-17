@@ -19,10 +19,22 @@
 		<?php if ( have_posts() ) : ?>
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-				<div class="span8 uk-blogpost">
-					<a href="<?php the_permalink(); ?>"><h2><?php echo the_title(); ?></h2></a>
-					<p><?php echo the_excerpt(); ?></p>
+			<div class="row">
+				<div class="span12 uk-blogpost">
+					<div class="row-fluid">
+						<div class="span8">
+							<a href="<?php the_permalink(); ?>"><h2><?php echo the_title(); ?></h2></a>
+							<p class="uk-blogpost-meta">Skrivet av <strong><?php the_author(); ?></strong> den <?php echo the_date(); ?> <?php echo the_time(); ?></p>
+							<p><?php echo the_excerpt(); ?></p>
+						</div>
+						<?php if(has_post_thumbnail()) : ?>
+							<div class="span4 uk-blogpost-thumbnail">
+								<?php the_post_thumbnail(array(150,150)); ?>
+							</div>
+						<?php endif;?>
+					</div>
 				</div>
+			</div>
 			<?php endwhile; ?>
 		<?php endif; ?>
 <?php get_footer(); ?>

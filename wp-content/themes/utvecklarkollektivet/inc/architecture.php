@@ -81,3 +81,8 @@ function add_project_post_connector() {
 	);
 }
 add_action( 'init', 'add_project_post_connector' );
+
+function add_project_default_connector() {
+	simple_fields_register_post_type_default('projekt', 'project');
+}
+add_action('init', 'add_project_default_connector');
