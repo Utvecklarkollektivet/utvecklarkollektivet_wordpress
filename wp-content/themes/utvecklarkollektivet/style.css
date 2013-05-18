@@ -104,6 +104,10 @@ header a:hover {
 	list-style: none;
 }
 
+.uk-meta-user {
+	text-transform: capitalize;
+}
+
 
 /* ! FRONTPAGE
 ======================== */

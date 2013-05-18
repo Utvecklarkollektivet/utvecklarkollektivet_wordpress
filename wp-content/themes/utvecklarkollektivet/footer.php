@@ -1,19 +1,9 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains footer content and the closing of the
- * #main and #page div elements.
- *
- * @package WordPress
- * @subpackage Twenty_Thirteen
- * @since Twenty Thirteen 1.0
- */
-?>
-		</div><!-- #main -->
 		<footer>
-		</footer><!-- #colophon -->
+		</footer>
 	</div><!-- Container -->
 	<?php wp_footer(); ?>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/functions.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/main.js" type="text/javascript"></script>
 </body>
 </html>
