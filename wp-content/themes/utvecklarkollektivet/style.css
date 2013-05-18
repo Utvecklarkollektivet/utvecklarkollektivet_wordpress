@@ -35,6 +35,8 @@ body {
 h1,h2,h3,h4 {
 	font-family: "Noto sans", sans-serif;
 	font-weight: bold;
+	margin: 20px 0 0.4em 0;
+	line-height: 1em;
 }
 
 h1 {font-size:2em}
@@ -46,6 +48,37 @@ p {
 	font-size: 0.875em;
 }
 
+a {
+	color: #006e30;
+}
+
+a:hover,
+a:focus {
+	color: #148040;
+	text-decoration: none;
+	border-bottom: 1px solid #148040;
+}
+
+/* ! Message
+======================== */
+#uk-message {
+	min-width: 100%;
+	max-width: 100%;
+	padding: 20px;
+	text-align: center;
+	background: #148040;
+	display: none;
+	color: #fff;
+	font-family: "Noto Sans", sans-serif;
+	font-size: 2em;
+	cursor: crosshair;
+}
+
+#uk-message p {
+	margin: 0;
+	padding: 0;
+}
+
 /* ! Header
 ======================== */
 
@@ -53,8 +86,17 @@ header {
 	border-bottom: 2px solid #ddd;
 }
 
+header a:hover {
+	border-bottom: 0;
+}
+
+.uk-logo:hover {
+	opacity: 0.9;
+}
+
 .uk-menu {
 	list-style: none;
+	margin: 0;
 }
 
 .uk-menu li {
@@ -79,10 +121,51 @@ header {
 	background: #f9f9f9;
 }
 
+/* ! Authentication
+======================== */
+
 .uk-meta {
 	list-style: none;
+	margin: 0;
 }
 
+.uk-meta-user {
+	text-transform: capitalize;
+}
+
+.uk-login-error {
+	color: #80141e;
+}
+
+.uk-meta label {
+	margin: 0;
+}
+
+.uk-meta input {
+	margin: 0 0 10px 0;
+}
+
+.uk-login-rememberme {
+	display: block;
+	float: left;
+	margin: 4px 0 0 5px !important;
+	clear: right;
+}
+
+.uk-login-rememberme-label {
+	float: left;
+}
+
+.uk-login-submit {
+	margin-top: 10px;
+	display: block;
+	clear: both;
+}
+
+.uk-login-links {
+	margin-top: -20px;
+	font-size: 0.8em;
+}
 
 /* ! FRONTPAGE
 ======================== */
@@ -98,7 +181,7 @@ header {
 }
 
 .uk-blogpost-meta {
-	margin-top: -18px;
+	margin-top: -10px;
 	font-size: 0.7em;
 }
 
@@ -122,7 +205,27 @@ header {
 }
 
 .uk-projekt-medlemmar-medlem {
-	margin: 10px;
+	margin: 0.4em;
+}
+
+/* ! Single Projekt
+======================== */
+.uk-project-roles-needed {
+	list-style: none;
+	margin-left: 0;
+}
+
+.uk-project-roles-needed-role {
+	margin: 0.4em;
+}
+
+.uk-project-github {
+	color: #333;
+}
+
+.uk-project-github:hover {
+	color: #444;
+	text-decoration: none;
 }
 
 

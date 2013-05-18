@@ -33,7 +33,7 @@ register_post_type("Projekt", $args);
 
 
 // Lägger till Medlemmar i projekt fieldgroup
-function add_members_in_projet_field_group() {
+function add_members_in_project_field_group() {
 	simple_fields_register_field_group('medlemmar',
 		array (
 			'name' => 'Medlemmar i projekt',
@@ -62,7 +62,45 @@ function add_members_in_projet_field_group() {
 		)
 	);
 }
-add_action('init', 'add_members_in_projet_field_group');
+add_action('init', 'add_members_in_project_field_group');
+
+function add_github_link_field_group() {
+	simple_fields_register_field_group('github_link',
+		array (
+			'name' => 'Githublänk',
+			'description' => "Länk till github repository",
+			'repeatable' => 0,
+			'fields' => array(
+	  			array(
+	    			'slug' => "github_link",
+					'name' => 'Githublänk',
+	    			'description' => 'Länk till github repository',
+	    			'type' => 'text'
+	  			)
+			)
+		)
+	);
+}
+add_action('init', 'add_github_link_field_group');
+
+function add_roles_needed_field_group() {
+	simple_fields_register_field_group('roles_needed',
+		array (
+			'name' => 'Saknade roller',
+			'description' => "Roller som behövs till projektet",
+			'repeatable' => 1,
+			'fields' => array(
+	  			array(
+	    			'slug' => "role_needed",
+					'name' => 'Roll',
+	    			'description' => 'Rollen som eftersöks',
+	    			'type' => 'text'
+	  			)
+			)
+		)
+	);
+}
+add_action('init', 'add_roles_needed_field_group');
 
 // Lägger till Projekt Post Connector
 function add_project_post_connector() {
@@ -74,7 +112,17 @@ function add_project_post_connector() {
 	        		'slug' => 'medlemmar',
 	        		'context' => 'normal',
 	        		'priority' => 'high'
-	      		)
+	      		),
+	      		array(
+	        		'slug' => 'github_link',
+	        		'context' => 'normal',
+	        		'priority' => 'low'
+	      		),
+	      		array(
+	      			'slug' => 'roles_needed',
+	      			'context' => 'normal',
+	      			'priority' => 'high'
+      			),
 	    	),
 	    	'post_types' => array('projekt')
 	  	)

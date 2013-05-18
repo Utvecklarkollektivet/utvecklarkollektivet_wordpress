@@ -3,6 +3,9 @@
 // Lägger till Ariktekturen
 require_once('inc/architecture.php');
 
+// CUSTOM LOGIN
+require_once('inc/uk-custom-login.php');
+
 function register_main_nav() {
   register_nav_menu('main-nav', 'Main navigation');
 }
