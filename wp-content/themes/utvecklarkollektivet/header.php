@@ -63,6 +63,7 @@ $html_class = ( is_admin_bar_showing() ) ? 'wp-toolbar' : '';
 						<input class="btn btn-success uk-login-submit" id="login-submit-button" type="submit" value="Logga in">
 						<input type="hidden" name="action" value="login_action">
 					</form>
+					<p class="uk-login-links"><?php echo wp_register("",""); ?> | <a href="<?php echo wp_lostpassword_url(); ?>" title="Glömt lösenord">Glömt lösenord?</a></p>
 				<?php endif; ?>
 			</div>
 		</header>

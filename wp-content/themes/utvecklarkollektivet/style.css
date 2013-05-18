@@ -162,6 +162,11 @@ header a:hover {
 	clear: both;
 }
 
+.uk-login-links {
+	margin-top: -20px;
+	font-size: 0.8em;
+}
+
 /* ! FRONTPAGE
 ======================== */
 
