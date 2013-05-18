@@ -35,6 +35,7 @@ $html_class = ( is_admin_bar_showing() ) ? 'wp-toolbar' : '';
 	<![endif]-->
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css" />
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/font-awesome.min.css" />
 	<?php wp_head(); ?>
 </head>
 

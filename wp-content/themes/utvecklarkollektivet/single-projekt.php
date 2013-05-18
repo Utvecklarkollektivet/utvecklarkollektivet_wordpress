@@ -15,6 +15,9 @@ get_header(); ?>
 						<li class="uk-projekt-medlemmar-medlem"><?php echo $member['medlem_fornamn']." ".$member['medlem_efternamn']." - ".$member['medlem_roll']; ?></li>
 					<?php endforeach; ?>
 				</ul>
+				<?php $github_link = simple_fields_fieldgroup("github_link"); ?>
+				<h4>Repo</h4>				
+				<a class="uk-project-github" href="<?php echo $github_link; ?>"><span class="icon-github-sign icon-4x"></span></a>
 			</div>
 			<div class="span4">
 				<?php comments_template(); ?>

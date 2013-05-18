@@ -35,6 +35,7 @@ body {
 h1,h2,h3,h4 {
 	font-family: "Noto sans", sans-serif;
 	font-weight: bold;
+	margin: 20px 0 0.3em 0;
 }
 
 h1 {font-size:2em}
@@ -123,6 +124,17 @@ header {
 
 .uk-projekt-medlemmar-medlem {
 	margin: 10px;
+}
+
+/* ! Single Projekt
+======================== */
+.uk-project-github {
+	color: #333;
+}
+
+.uk-project-github:hover {
+	color: #444;
+	text-decoration: none;
 }
 
 
