@@ -83,6 +83,25 @@ function add_github_link_field_group() {
 }
 add_action('init', 'add_github_link_field_group');
 
+function add_roles_needed_field_group() {
+	simple_fields_register_field_group('roles_needed',
+		array (
+			'name' => 'Saknade roller',
+			'description' => "Roller som behövs till projektet",
+			'repeatable' => 1,
+			'fields' => array(
+	  			array(
+	    			'slug' => "role_needed",
+					'name' => 'Roll',
+	    			'description' => 'Rollen som eftersöks',
+	    			'type' => 'text'
+	  			)
+			)
+		)
+	);
+}
+add_action('init', 'add_roles_needed_field_group');
+
 // Lägger till Projekt Post Connector
 function add_project_post_connector() {
 	simple_fields_register_post_connector('projekt',
@@ -98,7 +117,12 @@ function add_project_post_connector() {
 	        		'slug' => 'github_link',
 	        		'context' => 'normal',
 	        		'priority' => 'low'
-	      		)
+	      		),
+	      		array(
+	      			'slug' => 'roles_needed',
+	      			'context' => 'normal',
+	      			'priority' => 'high'
+      			),
 	    	),
 	    	'post_types' => array('projekt')
 	  	)

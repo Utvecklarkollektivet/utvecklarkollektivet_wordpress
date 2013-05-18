@@ -35,7 +35,8 @@ body {
 h1,h2,h3,h4 {
 	font-family: "Noto sans", sans-serif;
 	font-weight: bold;
-	margin: 20px 0 0.3em 0;
+	margin: 20px 0 0.4em 0;
+	line-height: 1em;
 }
 
 h1 {font-size:2em}
@@ -123,11 +124,20 @@ header {
 }
 
 .uk-projekt-medlemmar-medlem {
-	margin: 10px;
+	margin: 0.4em;
 }
 
 /* ! Single Projekt
 ======================== */
+.uk-project-roles-needed {
+	list-style: none;
+	margin-left: 0;
+}
+
+.uk-project-roles-needed-role {
+	margin: 0.4em;
+}
+
 .uk-project-github {
 	color: #333;
 }
