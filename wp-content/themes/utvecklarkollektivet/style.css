@@ -255,6 +255,22 @@ header a:hover {
 	font-size: 0.8em;
 }
 
+.commits {
+	list-style: none;
+	width: 80%;
+}
+
+.commits a {
+	float: right;
+}
+
+.commits p {
+	padding: .4em;
+}
+
+.commits strong {
+	font-size: .8em;
+}
 /* ! HELPERS
 ======================== */
 
