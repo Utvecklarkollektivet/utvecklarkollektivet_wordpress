@@ -17,40 +17,12 @@ function my_show_extra_profile_fields( $user ) { ?>
 	<h3>Github API</h3>
 
 	<table class="form-table">
-
-		<?php 
-    	$ghid = get_the_author_meta( 'ghid', $user->ID );
-    	$ghsecret = get_the_author_meta( 'ghsecret', $user->ID );
-    	if(strlen($ghid) > 0 || strlen($ghsecret) > 0) {
-    ?>
-
-		<tr>    
-			<td>
-					<strong>Current ID: <?= $ghid ?></strong><br/>
-					<strong>Current Secret: <?= $ghsecret ?></strong><br/>
-					<a href="https://github.com/login/oauth/authorize?client_id=<?= $ghid ?>" class="button btn-success">Authorize</a> 
-			</td>
-		</tr>
-		<?php
-		}
-		?>
-    
-
 		<tr>
-			<th><label for="twitter">Github API-ID</label></th>
+			<th><label for="twitter">Github Access Token</label></th>
 
 			<td>
-				<input type="text" name="ghid" id="ghid" value="<?php echo esc_attr( get_the_author_meta( 'ghid', $user->ID ) ); ?>" class="regular-text" /><br />
-				<span class="description">Please enter your Github ID.</span>
-			</td>
-		</tr>
-
-		<tr>
-			<th><label for="twitter">Github API-Secret</label></th>
-
-			<td>
-				<input type="text" name="ghsecret" id="ghsecret" value="<?php echo esc_attr( get_the_author_meta( 'ghsecret', $user->ID ) ); ?>" class="regular-text" /><br />
-				<span class="description">Please enter your secret key.</span>
+				<input type="text" name="token" id="token" value="<?php echo esc_attr( get_the_author_meta( 'token', $user->ID ) ); ?>" class="regular-text" /><br />
+				<span class="description">Please enter your Github access token. It can be found under account settings.</span>
 			</td>
 		</tr>
 
@@ -64,9 +36,7 @@ function my_save_extra_profile_fields( $user_id ) {
 	if ( !current_user_can( 'edit_user', $user_id ) )
 		return false;
 
-
-	update_usermeta( $user_id, 'ghid',  $_POST['ghid']);
-	update_usermeta( $user_id, 'ghsecret',  $_POST['ghsecret']);
+	update_usermeta( $user_id, 'token',  $_POST['token']);
 }
 
 
@@ -74,14 +44,13 @@ class GHAPI {
 
 	private $id = "";
 	private $secret = "";
-	private $token = "4e49f7f8f90e81e6ee09720ff70d06b592c5a6d6";
+	private $token = "";
 	private $baseURL = "https://api.github.com";
 	private $repo;
 	private $user;
 
 	function __construct($user, $repoURL) {
-		$this->id = get_the_author_meta('ghid', $user->ID);
-		$this->secret = get_the_author_meta('ghsecret', $user->ID); 
+		$this->token = get_the_author_meta('token', $user->ID);
 		$parts = explode("/", $repoURL);
 		if(count($parts) > 2) {
 			$size = count($parts);
