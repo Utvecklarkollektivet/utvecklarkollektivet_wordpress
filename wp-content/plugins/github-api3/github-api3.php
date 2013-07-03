@@ -76,14 +76,26 @@ class GHAPI {
 	private $secret = "";
 	private $token = "4e49f7f8f90e81e6ee09720ff70d06b592c5a6d6";
 	private $baseURL = "https://api.github.com";
+	private $repo;
+	private $user;
 
-	function __construct($user) {
+	function __construct($user, $repoURL) {
 		$this->id = get_the_author_meta('ghid', $user->ID);
 		$this->secret = get_the_author_meta('ghsecret', $user->ID); 
+		$parts = explode("/", $repoURL);
+		if(count($parts) > 2) {
+			$size = count($parts);
+			$gUser = $parts[$size-2];
+			$gRepo = $parts[$size-1];	
+			$this->user = $gUser;
+			$this->repo = $gRepo;
+		}
+		else 
+			throw new Exception("Could not parse repo url.");
 	}
 
 	public function getCommits() {
-		$response = $this->doGetRequest("/repos/artmann/HTML5VideoPlayer/commits");
+		$response = $this->doGetRequest("/repos/".$this->user."/".$this->repo."/commits");
 		$data = json_decode($response["response"]);
 		$commits = array();
 
@@ -113,11 +125,6 @@ class GHAPI {
   	</div>
 
   	<?php
-  }
-
-	public function authenticate()
-  {
-    $this->doGetRequest("https://github.com/login/oauth/authorize", array("client_id" => $this->id));
   }
 
 	private function doGetRequest($url, $parameters = array())

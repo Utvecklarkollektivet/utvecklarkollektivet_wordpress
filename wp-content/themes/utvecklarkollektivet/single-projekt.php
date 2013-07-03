@@ -34,7 +34,7 @@ get_header(); ?>
 					if(strlen($github_link) > 0) {
 						$user = wp_get_current_user();
 						if($user) {
-							$api = new GHAPI($user);
+							$api = new GHAPI($user, $github_link);
 							$api->renderLatestCommits();
 						}	
 					}
