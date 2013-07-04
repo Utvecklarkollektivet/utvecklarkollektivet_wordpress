@@ -63,6 +63,31 @@ class GHAPI {
 			throw new Exception("Could not parse repo url.");
 	}
 
+	public function getIssues() {
+		$response = $this->doGetRequest("/repos/$this->user/$this->repo/issues");
+		$data = json_decode($response["response"]);
+		return $data;
+	}
+
+	public function renderIssues() {
+		$issues = $this->getIssues();
+
+		?><ul class="issues"><?php
+		foreach($issues as $issue) {
+			?>
+			<li>
+				<strong><?php echo $issue->title;?></strong><br/>
+				<?php echo $issue->user->login ?><br/>
+				<p>
+					<?php echo $issue->body; ?> 
+				</p>				
+			</li>
+			<?php
+		}
+		?> </ul> <?php 
+
+	}
+
 	public function getCommits() {
 		$response = $this->doGetRequest("/repos/".$this->user."/".$this->repo."/commits");
 		$data = json_decode($response["response"]);
