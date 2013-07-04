@@ -271,6 +271,14 @@ header a:hover {
 .commits strong {
 	font-size: .8em;
 }
+
+.issues {
+	list-style: none;
+}
+
+.issues p {
+	padding: .4em;
+}
 /* ! HELPERS
 ======================== */
 

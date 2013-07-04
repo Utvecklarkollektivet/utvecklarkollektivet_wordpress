@@ -36,6 +36,8 @@ get_header(); ?>
 						if($user) {
 							$api = new GHAPI($user, $github_link);
 							$api->renderLatestCommits();
+							echo "<hr/>";
+							$api->renderIssues();
 						}	
 					}
 				?>
