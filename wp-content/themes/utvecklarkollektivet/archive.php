@@ -29,4 +29,7 @@ get_header(); ?>
 				</div>
 			</div>
 		<?php endwhile; ?>
-<?php get_footer(); ?>
+<?php 
+ 	endif;
+  get_footer(); 
+?>
