@@ -27,6 +27,52 @@ body {
 ======================== */
 .container {
 	margin-top: 20px;
+	width: 80em;
+}
+
+header {
+	padding: 1em 3em;
+	background: #FFF;
+	height: 5em;
+}
+
+header .uk-logo {
+	width: 4em;
+}
+
+header h1 {
+	margin-left: 3em;
+}
+
+header .uk-menu {
+	height: 2em;
+	margin: 2em 0em;
+}
+
+header .uk-menu ul {
+	list-style: none;
+}
+
+header .uk-menu ul li {
+	line-height: normal;
+}
+
+header #login-form {
+	
+}
+
+header #login-form input {
+	width: 11em;
+	margin-left: 1em;
+	float: left;
+}
+
+.site-main {
+	width: 100%;
+	margin-top: 2em;
+	background: #FFF;
+	padding: 1em 3em;
+	padding-bottom: 5em;
 }
 
 /* ! Typography

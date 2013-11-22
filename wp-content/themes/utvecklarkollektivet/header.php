@@ -43,27 +43,25 @@ $html_class = ( is_admin_bar_showing() ) ? 'wp-toolbar' : '';
 	<div id="uk-message"></div>
 	<div class="container">
 		<header class="row-fluid">
-			<a class="span4" href="<?php echo home_url(); ?>"><img class="uk-logo align-left" src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="Utvecklarkollektivet" width="200" height= "199" /></a>
-			<?php wp_nav_menu( array( 'theme_location' => 'main-nav', 'container' => '', 'menu_class' => 'nav-menu span5 uk-menu' ) ); ?>
+			<div class="span4">
+				<a href="<?php echo home_url(); ?>"><img class="uk-logo align-left" src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="Utvecklarkollektivet"/></a>
+				<h1><a href="<?php echo home_url(); ?>">Utvecklarkolletivet</a></h1>
+			</div>
+			<?php wp_nav_menu( array( 'theme_location' => 'main-nav', 'container' => '', 'menu_class' => 'nav-menu span4 uk-menu' ) ); ?>
 
 			<?php // Authentication ?>
-			<div id="uk-meta" class="span3 uk-meta">
+			<div id="uk-meta" class="span4 uk-meta">
 				<?php $current_user = wp_get_current_user(); ?>
 				<?php if(isset($current_user->data)) : ?>
 					<h3 class="uk-meta-user"><?php echo $current_user->display_name; ?></h3>
 					<?php echo wp_loginout($_SERVER['REQUEST_URI']); ?>
 				<?php else : ?>
 					<form method="post" id="login-form">
-						<label for="login-name">Användarnamn</label>
-						<input name="log" id="login-name" type="text">
-						<label for="login-password">Lösenord</label>
-						<input name="pwd" id="login-password" type="password">
-						<label class="uk-login-rememberme-label" for="rememberme">Kom ihåg mig</label>
-						<input class="uk-login-rememberme" id="rememberme" name="rememberme" type="checkbox">
-						<input class="btn btn-success uk-login-submit" id="login-submit-button" type="submit" value="Logga in">
-						<input type="hidden" name="action" value="login_action">
+						<input name="log" id="login-name" type="text" placeholder="Användarnamn" />
+						<input name="pwd" id="login-password" type="password" placeholder="Lösenord" />
+						<input class="btn btn-success uk-login-submit" id="login-submit-button" type="submit" value="Logga in" /><br/>
+						<input type="hidden" name="action" value="login_action" />
 					</form>
-					<p class="uk-login-links"><?php echo wp_register("",""); ?> | <a href="<?php echo wp_lostpassword_url(); ?>" title="Glömt lösenord">Glömt lösenord?</a></p>
 				<?php endif; ?>
 			</div>
 		</header>
